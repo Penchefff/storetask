@@ -1,4 +1,4 @@
-require 'order_items'
+require_relative 'order_items'
 
 class Order
   attr_accessor :customer, :items

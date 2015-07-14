@@ -1,4 +1,4 @@
-require 'product'
+require_relative 'product'
 
 class Item
   attr_accessor :product, :quantity

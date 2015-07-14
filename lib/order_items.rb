@@ -1,4 +1,4 @@
-require 'itemable'
+require_relative 'itemable'
 
 class OrderItems
   include Itemable
