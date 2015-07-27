@@ -1,4 +1,5 @@
 require_relative 'cart_items'
+require 'forwardable'
 
 class Cart
   extend Forwardable
