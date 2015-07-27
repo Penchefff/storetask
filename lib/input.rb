@@ -1,6 +1,7 @@
 require_relative 'customer'
 require_relative 'cart'
 require_relative 'product'
+require_relative 'item'
 
 # class Parser
 
@@ -13,22 +14,22 @@ items 		= CartItems.new()
 # product1 = Product.new()
 product1 = Product.new(name: 'Meat', price: 12.00)
 product2 = Product.new(name: 'Chiroz', price: 312)
+product3 = Product.new(name: 'asd', price: 312)
 # product3 = Product.new('Midi', 123)
 items.add(product1)
 items.add(product2)
 puts(items.total_price())
-cart 		= Cart.new(items)
-puts(cart.count())
-puts(cart.total_price())
 
 
-puts(customer.name, customer.email)
 puts('please enter command: ')
 puts('1 to add item')
 puts('2 for items check')
 puts('3 for items count')
 puts('4 for items total price')
+puts('6 to add items to cart')
 puts('5 for exit')
+
+asd = Item.new(product: product1, quantity: 3)
 
 
 command = 0
@@ -48,6 +49,8 @@ loop do
     puts(items.total_price())
   when '5'
     break
+  when '6'
+    cart = Cart.new(items)
   end
 end
 # end
