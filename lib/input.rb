@@ -2,6 +2,7 @@ require_relative 'customer'
 require_relative 'cart'
 require_relative 'product'
 require_relative 'item'
+require_relative 'order'
 
 # class Parser
 
@@ -15,10 +16,24 @@ items 		= CartItems.new()
 product1 = Product.new(name: 'Meat', price: 12.00)
 product2 = Product.new(name: 'Chiroz', price: 312)
 product3 = Product.new(name: 'asd', price: 312)
+
+
 # product3 = Product.new('Midi', 123)
-items.add(product1)
-items.add(product2)
-puts(items.total_price())
+cart1 = Cart.new(asd = CartItems.new())
+iiiteeem = Item.new(product: product1, quantity: 5)
+iiiteeem1 = Item.new(product: product2, quantity: 5)
+iiiteeem2 = Item.new(product: product3, quantity: 5)
+cart1.add(iiiteeem)
+cart1.add(iiiteeem1)
+cart1.add(iiiteeem2)
+
+order = Order.new(customer: customer, items: cart1.items)
+# puts(cart1.total_price())
+# items.add(product1)
+# items.add(product2)
+puts('-------------')
+puts(order.items.total_price)
+puts('-------------')
 
 
 puts('please enter command: ')
