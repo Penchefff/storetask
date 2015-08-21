@@ -15,25 +15,26 @@ bahur = Product.new(name: 'Bahur', price: 312)
 
 products_list = [meat, chiroz, bahur]
 
-cart = Cart.new(CartItems.new())
+cart = Cart.new(CartItems.new)
 
 cart.add(Item.new(product: meat, quantity: 5))
 cart.add(Item.new(product: chiroz, quantity: 5))
 cart.add(Item.new(product: bahur, quantity: 5))
 
-def show_menu()
+def show_menu
   puts('please enter command:
   1 to list all available products
   2 to add product to cart
   3 for cart emptyness check
   4 for cart items count
   5 for cart items total price
-  6 for exit')
+  6 to create order
+  7 for exit')
 end
 
 command = 0
 loop do
-  show_menu()
+  show_menu
   command = gets.chomp
 
   case command
@@ -52,8 +53,10 @@ loop do
   when '4'
     puts(cart.items.count)
   when '5'
-    puts(cart.items.total_price())
+    puts(cart.items.total_price)
   when '6'
+    Order.new(customer: customer, items: cart.items)
+  when '7'
     break
   end
 end
