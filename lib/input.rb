@@ -32,6 +32,12 @@ def show_menu
   7 for exit')
 end
 
+def list_products(list)
+  list.each_with_index do |product, index|
+    puts format('%s. Name: %s, Price: %s', index, product.name, product.price)
+  end
+end
+
 command = 0
 loop do
   show_menu
@@ -39,21 +45,24 @@ loop do
 
   case command
   when '1'
-    products_list.each_with_index do |product, index|
-      puts format('%s. Name: %s, Price: %s', index, product.name, product.price)
-    end
+    list_products(products_list)
   when '2'
+    list_products(products_list)
     puts('Enter product index to add: ')
     product = products_list[(gets.chomp).to_i]
     puts('Enter quantity: ')
     quantity = (gets.chomp).to_f
     cart.items.add(Item.new(product: product, quantity: quantity))
   when '3'
-    puts(cart.items.empty?)
+    if cart.items.empty?
+      puts('Cart is empty')
+    else
+      puts('Cart is not empty')
+    end
   when '4'
-    puts(cart.items.count)
+    puts format('%s items are currently in the cart', cart.items.count)
   when '5'
-    puts(cart.items.total_price)
+    puts format('%s is current total price', cart.items.total_price)
   when '6'
     Order.new(customer: customer, items: cart.items)
   when '7'
