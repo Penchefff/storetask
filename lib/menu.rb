@@ -1,8 +1,8 @@
-require_relative 'command_factory'
-
 class Menu
-  def initialize
-    @commands = CommandFactory.build
+  attr_accessor :commands
+  
+  def initialize(commands)
+    @commands = commands
   end
   
   def show
