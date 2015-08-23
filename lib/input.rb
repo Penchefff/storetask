@@ -22,14 +22,15 @@ cart.add(Item.new(product: chiroz, quantity: 5))
 cart.add(Item.new(product: bahur, quantity: 5))
 
 def show_menu
-  puts('please enter command:
+  puts('
   1 to list all available products
   2 to add product to cart
   3 for cart emptyness check
   4 for cart items count
   5 for cart items total price
   6 to create order
-  7 for exit')
+  7 for exit
+  please enter command: ')
 end
 
 def list_products(list)
