@@ -3,7 +3,7 @@ class CommandListener
     @commands = commands
     @app = app
   end
-  
+
   def listen
     loop do
       input = user_input
@@ -14,7 +14,7 @@ class CommandListener
       end
     end
   end
-  
+
   def user_input
     gets.chomp
   end

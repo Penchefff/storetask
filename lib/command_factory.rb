@@ -4,6 +4,6 @@ require_relative 'list_store_products_command'
 
 class CommandFactory
   def self.build
-    [ CreateCustomerCommand, ExitCommand, ListStoreProductsCommand ]
+    [CreateCustomerCommand, ExitCommand, ListStoreProductsCommand]
   end
 end
