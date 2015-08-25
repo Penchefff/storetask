@@ -2,7 +2,7 @@ class Menu
   attr_accessor :commands
   
   def initialize(commands)
-    @commands = commands
+    @commands = commands.sort_by! {|command| command.code}
   end
   
   def show
