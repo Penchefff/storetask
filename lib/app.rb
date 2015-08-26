@@ -1,13 +1,15 @@
 require_relative 'menu'
+require_relative 'cart'
 require_relative 'command_factory'
 require_relative 'command_listener'
 
 class App
-  attr_accessor :customer
+  attr_accessor :customer, :cart
 
   def initialize
     @commands = CommandFactory.build
     @customer = Customer.new
+    @cart = Cart.new
   end
 
   def run

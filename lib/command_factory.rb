@@ -1,9 +1,10 @@
 require_relative 'create_customer_command'
 require_relative 'exit_command'
 require_relative 'list_store_products_command'
+require_relative 'add_product_to_cart_command'
 
 class CommandFactory
   def self.build
-    [CreateCustomerCommand, ExitCommand, ListStoreProductsCommand]
+    [CreateCustomerCommand, ExitCommand, ListStoreProductsCommand, AddProductToCartCommand]
   end
 end

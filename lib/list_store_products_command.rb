@@ -14,15 +14,15 @@ class ListStoreProductsCommand
   end
 
   def execute
-    fetch_products
-    list_products
+    ListStoreProductsCommand.fetch_products
+    ListStoreProductsCommand.list_products
   end
 
-  def fetch_products
+  def self.fetch_products
     @store_products ||= StoreProducts.new
   end
 
-  def list_products
+  def self.list_products
     @store_products.products.each_with_index do |product, index|
       puts format('%s. Name: %s, Price: %s',index, product.name, product.price)
     end
