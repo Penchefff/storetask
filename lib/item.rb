@@ -12,4 +12,8 @@ class Item
   def price
     @product.price * @quantity
   end
+
+  def name
+    @product.name
+  end
 end

@@ -19,7 +19,7 @@ class AddProductToCartCommand
     @products = ListStoreProductsCommand.list_products
     product_index = select_product_index
     product_quantity = set_product_quantity
-    @cart.items.add(Item.new(product: @products[product_index], quantity: product_quantity))
+    @cart.cart_items.add(Item.new(product: @products[product_index], quantity: product_quantity))
   end
   
   def select_product_index
