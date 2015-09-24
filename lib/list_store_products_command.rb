@@ -2,7 +2,7 @@ require_relative 'store_products'
 require_relative 'product'
 
 class ListStoreProductsCommand
-  def initialize(app)
+  def initialize(_)
   end
 
   def self.msg
@@ -24,7 +24,7 @@ class ListStoreProductsCommand
 
   def self.list_products
     @store_products.products.each_with_index do |product, index|
-      puts format('%s. Name: %s, Price: %s',index, product.name, product.price)
+      puts format('%s. Name: %s, Price: %s', index, product.name, product.price)
     end
   end
 end

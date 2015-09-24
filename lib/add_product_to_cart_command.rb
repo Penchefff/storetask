@@ -21,7 +21,7 @@ class AddProductToCartCommand
     product_quantity = set_product_quantity
     @cart.cart_items.add(Item.new(product: @products[product_index], quantity: product_quantity))
   end
-  
+
   def select_product_index
     puts 'Please enter product index from the list: '
     gets.chomp.to_i

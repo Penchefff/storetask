@@ -11,7 +11,7 @@ class Cart
   def initialize(cart_items = CartItems.new)
     @cart_items = cart_items
   end
-  
+
   def items
     @cart_items.items
   end

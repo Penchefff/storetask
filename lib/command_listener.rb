@@ -8,9 +8,7 @@ class CommandListener
     loop do
       input = user_input
       @commands.each do |cmd|
-        if input == cmd.code
-          cmd.new(@app).execute
-        end
+        cmd.new(@app).execute if input == cmd.code
       end
     end
   end

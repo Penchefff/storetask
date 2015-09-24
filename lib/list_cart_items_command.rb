@@ -3,11 +3,11 @@ class ListCartItemsCommand
   def initialize(app)
     @cart = app.cart
   end
-  
+
   def self.msg
     'List all cart items '
   end
-  
+
   def self.code
     '5'
   end

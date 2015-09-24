@@ -17,9 +17,7 @@ class CartItemsTotalPrice
 
   def total_price
     total = 0
-    if @cart.items.total_price
-      total = @cart.items.total_price
-    end
+      total = @cart.cart_items.total_price if @cart.cart_items.total_price
     total
   end
 end

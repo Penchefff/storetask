@@ -1,5 +1,5 @@
 class ExitCommand
-  def initialize(app)
+  def initialize(_)
   end
 
   def self.msg
