@@ -1,5 +1,9 @@
 class ConsoleHandler
-  def self.handle_string(*p)
-    puts format(p[0], p[1], p[2])
+  def self.print(str)
+    puts str
+  end
+
+  def self.handle_string(str, *params)
+    puts format(str, *params)
   end
 end

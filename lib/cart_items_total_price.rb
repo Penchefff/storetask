@@ -12,7 +12,7 @@ class CartItemsTotalPrice
   end
 
   def execute
-    puts format('%s is current total price', total_price)
+    ConsoleHandler.handle_string('%s is current total price', total_price)
   end
 
   def total_price

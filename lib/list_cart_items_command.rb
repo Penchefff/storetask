@@ -14,7 +14,7 @@ class ListCartItemsCommand
 
   def execute
     @cart.items.each do |item|
-      puts format('Name: %s, quantity: %s, price: %s', item.name, item.quantity, item.price)
+      ConsoleHandler.handle_string('Name: %s, quantity: %s, price: %s', item.name, item.quantity, item.price)
     end
   end
 end

@@ -23,12 +23,12 @@ class AddProductToCartCommand
   end
 
   def select_product_index
-    puts 'Please enter product index from the list: '
+    ConsoleHandler.print('Please enter product index from the list: ')
     gets.chomp.to_i
   end
 
   def set_product_quantity
-    puts 'Please product quantity: '
+    ConsoleHandler.print('Please product quantity: ')
     gets.chomp.to_i
   end
 end

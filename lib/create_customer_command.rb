@@ -23,16 +23,16 @@ class CreateCustomerCommand
   private
 
   def set_customer_name
-    puts 'Enter name: '
+    ConsoleHandler.print('Enter name: ')
     @customer.name = gets.chomp
   end
 
   def set_customer_email
-    puts 'Enter email: '
+    ConsoleHandler.print('Enter email: ')
     @customer.email = gets.chomp
   end
 
   def show_customer_data
-    puts format('Customer with name: %s, and email: %s, has been created', @customer.name, @customer.email)
+    ConsoleHandler.handle_string('Customer with name: %s, and email: %s, has been created', @customer.name, @customer.email)
   end
 end
