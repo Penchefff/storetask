@@ -17,17 +17,17 @@ class AddProductToCartCommand
   def execute
     ListStoreProductsCommand.fetch_products
     @products = ListStoreProductsCommand.list_products
-    product_index = select_product_index
-    product_quantity = set_product_quantity
+    product_index = product_index
+    product_quantity = product_quantity
     @cart.cart_items.add(Item.new(product: @products[product_index], quantity: product_quantity))
   end
 
-  def select_product_index
+  def product_index
     ConsoleHandler.print('Please enter product index from the list: ')
     gets.chomp.to_i
   end
 
-  def set_product_quantity
+  def product_quantity
     ConsoleHandler.print('Please product quantity: ')
     gets.chomp.to_i
   end

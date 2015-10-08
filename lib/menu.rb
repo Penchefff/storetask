@@ -10,7 +10,7 @@ class Menu
   def show
     ConsoleHandler.print('Menu:')
     @commands.each do |cmd|
-      ConsoleHandler.handle_string('%s, code: %s', cmd.msg, cmd.code)
+      ConsoleHandler.print_format('%s, code: %s', cmd.msg, cmd.code)
     end
   end
 end

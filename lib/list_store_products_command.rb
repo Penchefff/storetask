@@ -24,7 +24,7 @@ class ListStoreProductsCommand
 
   def self.list_products
     @store_products.products.each_with_index do |product, index|
-      ConsoleHandler.handle_string('%s. Name: %s, Price: %s', index, product.name, product.price)
+      ConsoleHandler.print_format('%s. Name: %s, Price: %s', index, product.name, product.price)
     end
   end
 end

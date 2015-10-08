@@ -29,10 +29,19 @@ class CreateCustomerCommand
 
   def set_customer_email
     ConsoleHandler.print('Enter email: ')
-    @customer.email = gets.chomp
+    loop do
+      @email = gets.chomp
+      break if valid_email?(@email)
+      ConsoleHandler.print('Please input valid email: ')
+    end
+    @customer.email = @email
   end
 
   def show_customer_data
-    ConsoleHandler.handle_string('Customer with name: %s, and email: %s, has been created', @customer.name, @customer.email)
+    ConsoleHandler.print_format('Customer with name: %s, and email: %s, has been created', @customer.name, @customer.email)
+  end
+
+  def valid_email?(email)
+    (email =~ /\A\S+@.+\.\S+\z/)
   end
 end

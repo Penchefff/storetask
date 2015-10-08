@@ -3,7 +3,7 @@ class ConsoleHandler
     puts str
   end
 
-  def self.handle_string(str, *params)
+  def self.print_format(str, *params)
     puts format(str, *params)
   end
 end
